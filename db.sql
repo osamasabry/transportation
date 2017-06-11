@@ -1,0 +1,210 @@
+-- phpMyAdmin SQL Dump
+-- version 4.5.4.1deb2ubuntu2
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Jun 11, 2017 at 02:11 PM
+-- Server version: 5.7.18-0ubuntu0.16.04.1
+-- PHP Version: 5.6.30-10+deb.sury.org~xenial+2
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `t`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `governorates`
+--
+
+CREATE TABLE `governorates` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `governorates`
+--
+
+INSERT INTO `governorates` (`id`, `name`) VALUES
+(1, 'Cairo'),
+(2, 'Dakahlya'),
+(3, 'Giza'),
+(4, 'Tanta');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` int(11) NOT NULL,
+  `customer_name` varchar(100) NOT NULL,
+  `from_place` int(11) NOT NULL,
+  `to_place` int(11) NOT NULL,
+  `from_date` date NOT NULL,
+  `to_date` date NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `phone` int(11) NOT NULL,
+  `emp_id` int(11) DEFAULT NULL,
+  `driver_id` int(11) DEFAULT NULL,
+  `accepted` tinyint(1) NOT NULL DEFAULT '0',
+  `truck_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`id`, `customer_name`, `from_place`, `to_place`, `from_date`, `to_date`, `email`, `phone`, `emp_id`, `driver_id`, `accepted`, `truck_id`) VALUES
+(1, 'ali elsayed', 1, 2, '2017-06-01', '2017-06-15', 'jhjhjhj', 6556565, 2, NULL, 0, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `trucks`
+--
+
+CREATE TABLE `trucks` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `type` varchar(50) NOT NULL,
+  `model` varchar(50) NOT NULL,
+  `active` tinyint(1) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `trucks`
+--
+
+INSERT INTO `trucks` (`id`, `name`, `type`, `model`, `active`) VALUES
+(1, 'lorry', 'chevrolet', '2008', 1),
+(2, 'lorry2', 'chevrolet', '2010', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `user_name` varchar(50) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `phone` int(11) NOT NULL,
+  `address` varchar(100) NOT NULL,
+  `user_type` int(11) NOT NULL,
+  `active` tinyint(1) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `user_name`, `password`, `phone`, `address`, `user_type`, `active`) VALUES
+(1, 'shrouk elsayed', 'shrouk', '123456', 8778787, 'ghghg', 1, 1),
+(2, 'osama sabry', 'osama', '12345', 77878788, 'ghjjjhj', 2, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users_types`
+--
+
+CREATE TABLE `users_types` (
+  `id` int(11) NOT NULL,
+  `type` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users_types`
+--
+
+INSERT INTO `users_types` (`id`, `type`) VALUES
+(1, 'admin'),
+(2, 'employee'),
+(3, 'driver');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `governorates`
+--
+ALTER TABLE `governorates`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `emp_id` (`emp_id`),
+  ADD KEY `driver_id` (`driver_id`),
+  ADD KEY `truck_id` (`truck_id`),
+  ADD KEY `from_place` (`from_place`),
+  ADD KEY `to_place` (`to_place`);
+
+--
+-- Indexes for table `trucks`
+--
+ALTER TABLE `trucks`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user_type` (`user_type`);
+
+--
+-- Indexes for table `users_types`
+--
+ALTER TABLE `users_types`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `governorates`
+--
+ALTER TABLE `governorates`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT for table `trucks`
+--
+ALTER TABLE `trucks`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `users_types`
+--
+ALTER TABLE `users_types`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
