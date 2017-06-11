@@ -266,18 +266,20 @@
                     <div class="containeer" style="">
                         <ul class="nav nav-tabs">
                         <?php if(isset($_SESSION['user_type']) && $_SESSION['user_type'] == 2 ){ ?>
-                          <li class="active"><a data-toggle="pill" href="#menu1" style="width: 200px; text-align: center;width: 200px;">All Orders</a></li>
+                          <li><a data-toggle="pill" href="#menu1" style="width: 200px; text-align: center;width: 200px;">All Orders</a></li>
                           <li><a data-toggle="pill" href="#menu5" style="width: 200px; text-align: center;">My Orders</a></li>
                           <?php }elseif(isset($_SESSION['user_type']) && $_SESSION['user_type'] == 1){?>
-                          <li class="active"><a data-toggle="pill" href="#menu1" style="width: 200px; text-align: center;width: 200px;">All Orders</a></li>
+                          <li><a data-toggle="pill" href="#menu1" style="width: 200px; text-align: center;width: 200px;">All Orders</a></li>
                           <li><a data-toggle="pill" href="#menu2" style="width: 200px; text-align: center;">All Employees</a></li>
                           <li><a data-toggle="pill" href="#menu3" style="width: 200px; text-align: center;">All Drivers</a></li>
                           <li><a data-toggle="pill" href="#menu4" style="width: 200px; text-align: center;">All Trucks</a></li>
-                            <?php }?>
+                          <?php }elseif(isset($_SESSION['user_type']) && $_SESSION['user_type'] == 3){?>
+                          <li><a data-toggle="pill" href="#menu6" style="width: 200px; text-align: center;">My Orders</a></li>
+                          <?php } ?>
                         </ul>
                         <div class="tab-content">
                         <?php  //if(isset($_SESSION['user_type']) && $_SESSION['user_type'] == 2 ){ ?>
-                            <div id="menu1" class="tab-pane fade in active">
+                            <div id="menu1" class="tab-pane fade">
                                 <h3>Customers Orders</h3>
                                 <?php 
                                     require_once 'connection.php';
@@ -366,7 +368,7 @@
                             </div>
                             <?php// }elseif (isset($_SESSION['user_type']) && $_SESSION['user_type'] == 2){
                              ?>
-                                <div id="menu5" class="tab-pane fade">
+                            <div id="menu5" class="tab-pane fade">
                                 <h3>My Orders</h3>
                                 <?php 
                                     require_once 'connection.php';
@@ -665,6 +667,95 @@
                                         </div> 
                                     </div>
                                 <?php
+                                    }
+                                ?>
+                            </div>
+                            <div id="menu6" class="tab-pane fade">
+                                <h3>My Orders</h3>
+                                <?php 
+                                    require_once 'connection.php';
+
+                                    $sql=("SELECT * FROM orders where driver_id = ".$_SESSION['user_id']);
+                                    $result = mysqli_query($link,$sql);
+                                    $count = mysqli_num_rows($result);
+                                    $data = [];
+
+                                    while($row = mysqli_fetch_assoc($result)) {
+                                        $data[] = $row;
+                                    }
+                                    if($count==0){
+                                        echo "<div class=\"demotext\" > <h3> No result matches </h3></div>"; 
+                                    }else{ 
+                                        echo "<table class=\"responstable\">
+                                            <tr>
+                                                <th >OrderID</th>
+                                                <th >CustomerName</th>
+                                                <th >CustomerPhone</th>
+                                                <th >CustomerEmail</th>
+                                                <th >Date From/To</th>
+                                                <th >Place From/To</th>
+                                                <th >EmployeeID</th>
+                                                <th >DriverID</th>
+                                                <th >Accepted</th>
+                                                <th >TruckID</th>
+                                                <th >Notes</th>
+                                              </tr>";
+                                         for($i=0;$i<$count;$i++)
+                                        {
+                                            // From place
+                                            $sql2=("SELECT name FROM governorates where id =".$data[$i]['from_place']);
+                                            $sql2Res=mysqli_query($link,$sql2);
+                                            $from = mysqli_fetch_assoc($sql2Res)['name'];
+                                            // To place
+                                            $sql3=("SELECT name FROM governorates where id = ".$data[$i]['to_place']);
+                                            $sql3Res=mysqli_query($link,$sql3);
+                                            $to = mysqli_fetch_assoc($sql3Res)['name'];
+
+                                            $sql4=("SELECT name FROM users where id = ".$data[$i]['emp_id']);
+                                            $sql4Res = mysqli_query($link,$sql4);
+                                            if($sql4Res)
+                                                $emp_id = mysqli_fetch_assoc($sql4Res)['name'];
+                                            else
+                                                $emp_id = 'Not Assigned';
+
+                                            $sql5=("SELECT name FROM users where id = ".$data[$i]['driver_id']);
+                                            $sql5Res = mysqli_query($link,$sql5);
+                                            if($sql5Res)
+                                                $driver_id = mysqli_fetch_assoc($sql5Res)['name'];
+                                            else
+                                                $driver_id = 'Not Assigned';
+
+                                            $sql6=("SELECT name FROM trucks where id = ".$data[$i]['truck_id']);
+                                            $sql6Res=mysqli_query($link,$sql6);
+                                            $truck_id = mysqli_fetch_assoc($sql6Res)['name'];
+
+                                            $id=$data[$i]["id"];
+                                            $name=$data[$i]["customer_name"];
+                                            $phone=$data[$i]["phone"];
+                                            $email=$data[$i]["email"];
+                                            $date=$data[$i]["from_date"] .'/'.$data[$i]['to_date'];
+                                            $place=$from .'/'.$to;
+                                            // $accepted = ($data[$i]['accepted'] == 0)? 'False' : 'True';   
+                                            $notes = 'hjhjhj';
+                                            echo "<tr>";
+                                            echo "<td>".$id."</td>";
+                                            echo "<td>".$name."</td>";
+                                            echo "<td>".$phone."</td>";
+                                            echo "<td>".$email."</td>";
+                                            echo "<td>".$date."</td>";
+                                            echo "<td>".$place."</td>";
+                                            echo "<td>".$emp_id."</td>";
+                                            echo "<td>".$driver_id."</td>";
+                                            if($data[$i]['accepted'] == 0)
+                                                echo "<td><div class='demotextt' style='background-color:#167F92;'><a style='color:white;' href='acceptOrder.php?id=".$id."'>Accept</a></div></td>";
+                                            else
+                                                echo "<td>Accepted</td>";
+
+                                            echo "<td>".$truck_id."</td>";
+                                            echo "<td>".$notes."</td>";
+                                            echo "</tr>";
+                                            }
+                                        echo "</table>"; 
                                     }
                                 ?>
                             </div>

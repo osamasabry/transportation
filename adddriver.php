@@ -288,7 +288,7 @@
                                     <input type="text" name="user_name" placeholder="User Name" value="<?php isset($_GET['id']) ? print_r($driver['user_name']) : ''; ?>">
                                 </div>
                                 <div class="form_half left">
-                                    <input type="text" name="password" placeholder="Password" value="<?php isset($_GET['id']) ? print_r($driver['password']) : ''; ?>">
+                                    <input type="password" name="password" placeholder="Password" value="<?php isset($_GET['id']) ? print_r($driver['password']) : ''; ?>">
                                 </div>
                                 <div class="form_half right">
                                     <input type="text" name="phone" placeholder="ِPhone Number" value="<?php isset($_GET['id']) ? print_r($driver['phone']) : ''; ?>">
