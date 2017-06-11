@@ -183,24 +183,24 @@
                                        
                                         </li>
                                         <li class="has_dropdown">
-                                            <a href="about_us.html">About us<span class="fa fa-angle-down"></span></a>
+                                            <a href="about_us.php">About us<span class="fa fa-angle-down"></span></a>
                                           
                                         </li>
                                         <li class="has_dropdown">
-                                            <a href="services.html">services<span class="fa fa-angle-down"></span></a>
+                                            <a href="services.php">services<span class="fa fa-angle-down"></span></a>
                                          
                                         </li>
 
-                                   <!--      <li><a href="track_trace.html">Track & Trace</a></li> -->
+                                   <!--      <li><a href="track_trace.php">Track & Trace</a></li> -->
                                       
                                      
                                         <li class="has_dropdown">
-                                            <a href="news.html">News<span class="fa fa-angle-down"></span></a>
+                                            <a href="news.php">News<span class="fa fa-angle-down"></span></a>
                                             <div class="dropdwon">
                                                 <ul>
                                                 
-                                                    <li><a href="news_list.html">news list</a></li>
-                                                    <li><a href="news.html">news grid</a></li>
+                                                    <li><a href="news_list.php">news list</a></li>
+                                                    <li><a href="news.php">news grid</a></li>
                                                 </ul>
                                             </div>
                                         </li>
@@ -406,10 +406,10 @@
                     <div class="footer_menu clearfix">
                         <ul>
                             <li><a href="index.php">Home</a></li>
-                            <li><a href="about_us.html">About Us</a></li>
-                            <li><a href="track_trace.html">Track & Trace</a></li>
+                            <li><a href="about_us.php">About Us</a></li>
+                            <li><a href="track_trace.php">Track & Trace</a></li>
                             <li><a href="http://trusttransport.themeebit.com/blog">News</a></li>
-                            <li><a href="http://trusttransport.themeebit.com/contcat.html">Contact Us</a></li>
+                            <li><a href="http://trusttransport.themeebit.com/contcat.php">Contact Us</a></li>
                         </ul>
                     </div>
                 </div>

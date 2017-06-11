@@ -114,7 +114,7 @@
                                         <span class="small_title fadeInRightShort animated">FAST DELIVERY</span><br>
                                         <h1 class="big_title fadeInRightShort animated">trust is world wide transport service</h1>
                                         <div class="hero_btn">
-                                            <a href="index.html#" class="trust_btn">see more</a>
+                                            <a href="index.php#" class="trust_btn">see more</a>
                                         </div>
                                     </div>
                                 </div>
@@ -133,7 +133,7 @@
                                         <span class="small_title fadeInLeftShort animated">FAST DELIVERY</span><br>
                                         <h1 class="big_title fadeInLeftShort animated">trust is world wide transport service</h1>
                                         <div class="hero_btn">
-                                            <a href="index.html#" class="trust_btn">see more</a>
+                                            <a href="index.php#" class="trust_btn">see more</a>
                                         </div>
                                     </div>
                                 </div>
@@ -189,7 +189,7 @@
                                             <div class="dropdwon">
                                                 <ul>
                                                 
-                                                    <li><a href="news_list.html">news list</a></li>
+                                                    <li><a href="news_list.php">news list</a></li>
                                                     <li><a href="news.php">news grid</a></li>
                                                 </ul>
                                             </div>
@@ -772,7 +772,7 @@
                     <div class="col-md-3 xxs_fullwidth col-xs-6">
                         <div class="footer_about_wrapper reveal animated" data-anim="fadeInLeftShort" >
                             <div class="footer_logo">
-                                <a href="index.html">
+                                <a href="index.php">
                                     <img src="images/footer_logo.png" alt="footer_logo">
                                 </a>
                             </div>
@@ -782,11 +782,11 @@
                             <div class="footer_social">
                                 <h4>get connected</h4>
                                 <ul>
-                                    <li><a href="index.html#"><span class="fa fa-facebook"></span></a></li>
-                                    <li><a href="index.html#"><span class="fa fa-twitter"></span></a></li>
-                                    <li><a href="index.html#"><span class="fa fa-pinterest-p"></span></a></li>
-                                    <li><a href="index.html#"><span class="fa fa-linkedin"></span></a></li>
-                                    <li><a href="index.html#"><span class="fa fa-skype"></span></a></li>
+                                    <li><a href="index.php#"><span class="fa fa-facebook"></span></a></li>
+                                    <li><a href="index.php#"><span class="fa fa-twitter"></span></a></li>
+                                    <li><a href="index.php#"><span class="fa fa-pinterest-p"></span></a></li>
+                                    <li><a href="index.php#"><span class="fa fa-linkedin"></span></a></li>
+                                    <li><a href="index.php#"><span class="fa fa-skype"></span></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -799,13 +799,13 @@
                             </div>
                             <div class="footer_links">
                                 <ul>
-                                    <li><a href="index.html#">Road Transportation</a></li>
-                                    <li><a href="index.html#">Heavy Haulage</a></li>
-                                    <li><a href="index.html#">Vehicle Inspections</a></li>
-                                    <li><a href="index.html#">Special Projects</a></li>
-                                    <li><a href="index.html#">Packaging & Storage</a></li>
-                                    <li><a href="index.html#">Freight Forwarding</a></li>
-                                    <li><a href="index.html#">Warehousing</a></li>
+                                    <li><a href="index.php#">Road Transportation</a></li>
+                                    <li><a href="index.php#">Heavy Haulage</a></li>
+                                    <li><a href="index.php#">Vehicle Inspections</a></li>
+                                    <li><a href="index.php#">Special Projects</a></li>
+                                    <li><a href="index.php#">Packaging & Storage</a></li>
+                                    <li><a href="index.php#">Freight Forwarding</a></li>
+                                    <li><a href="index.php#">Warehousing</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -830,7 +830,7 @@
                                         <span class="fa fa-envelope-o"></span>
                                         <div class="address_right">
                                             <a href="#">mona.elmenshawy@icloud.com</a>
-                                            <a href="index.html#">trusttransport.net</a>
+                                            <a href="index.php#">trusttransport.net</a>
                                         </div>
                                     </li>
                                 </ul>
@@ -877,11 +877,11 @@
                 <div class="col-md-6 xs_fullwidth col-xs-6">
                     <div class="footer_menu clearfix">
                         <ul>
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="about_us.html">About Us</a></li>
-                            <li><a href="track_trace.html">Track & Trace</a></li>
+                            <li><a href="index.php">Home</a></li>
+                            <li><a href="about_us.php">About Us</a></li>
+                            <li><a href="track_trace.php">Track & Trace</a></li>
                             <li><a href="http://trusttransport.themeebit.com/blog">News</a></li>
-                            <li><a href="http://trusttransport.themeebit.com/contcat.html">Contact Us</a></li>
+                            <li><a href="http://trusttransport.themeebit.com/contcat.php">Contact Us</a></li>
                         </ul>
                     </div>
                 </div>

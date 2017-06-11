@@ -112,7 +112,7 @@
                                         <span class="small_title fadeInRightShort animated">FAST DELIVERY</span><br>
                                         <h1 class="big_title fadeInRightShort animated">trust is world wide transport service</h1>
                                         <div class="hero_btn">
-                                            <a href="index.html#" class="trust_btn">see more</a>
+                                            <a href="index.php#" class="trust_btn">see more</a>
                                         </div>
                                     </div>
                                 </div>
@@ -131,7 +131,7 @@
                                         <span class="small_title fadeInLeftShort animated">FAST DELIVERY</span><br>
                                         <h1 class="big_title fadeInLeftShort animated">trust is world wide transport service</h1>
                                         <div class="hero_btn">
-                                            <a href="index.html#" class="trust_btn">see more</a>
+                                            <a href="index.php#" class="trust_btn">see more</a>
                                         </div>
                                     </div>
                                 </div>
@@ -167,34 +167,34 @@
                                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                                     <ul class="nav navbar-nav magic_menu">
                                         <li class="has_dropdown active">
-                                            <a href="index.html">home<span class="fa fa-angle-down"></span></a>
+                                            <a href="index.php">home<span class="fa fa-angle-down"></span></a>
                                        
                                         </li>
                                         <li class="has_dropdown">
-                                            <a href="about_us.html">About us<span class="fa fa-angle-down"></span></a>
+                                            <a href="about_us.php">About us<span class="fa fa-angle-down"></span></a>
                                           
                                         </li>
                                         <li class="has_dropdown">
-                                            <a href="services.html">services<span class="fa fa-angle-down"></span></a>
+                                            <a href="services.php">services<span class="fa fa-angle-down"></span></a>
                                          
                                         </li>
 
-                                   <!--      <li><a href="track_trace.html">Track & Trace</a></li> -->
+                                   <!--      <li><a href="track_trace.php">Track & Trace</a></li> -->
                                       
                                      
                                         <li class="has_dropdown">
-                                            <a href="news.html">News<span class="fa fa-angle-down"></span></a>
+                                            <a href="news.php">News<span class="fa fa-angle-down"></span></a>
                                             <div class="dropdwon">
                                                 <ul>
                                                 
-                                                    <li><a href="news_list.html">news list</a></li>
-                                                    <li><a href="news.html">news grid</a></li>
+                                                    <li><a href="news_list.php">news list</a></li>
+                                                    <li><a href="news.php">news grid</a></li>
                                                 </ul>
                                             </div>
                                         </li>
-                                        <li><a href="contact.html">contact</a></li>
+                                        <li><a href="contact.php">contact</a></li>
                                           <li>
-                                            <a href="login.html">Admin<span class="fa fa-angle-down"></span></a>
+                                            <a href="login.php">Admin<span class="fa fa-angle-down"></span></a>
                                          
                                         </li>
                                     </ul>

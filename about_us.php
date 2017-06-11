@@ -189,7 +189,7 @@ session_start();
                                             <div class="dropdwon">
                                                 <ul>
                                                 
-                                                    <li><a href="news_list.html">news list</a></li>
+                                                    <li><a href="news_list.php">news list</a></li>
                                                     <li><a href="news.php">news grid</a></li>
                                                 </ul>
                                             </div>
@@ -239,8 +239,8 @@ session_start();
 
                             <!-- Nav tabs -->
                             <ul class="nav nav-tabs" role="tablist">
-                                <li role="presentation" class="active"><a  href="about_us.html#mission" aria-controls="mission" role="tab" data-toggle="tab">our mission</a></li>
-                                <li role="presentation"><a href="about_us.html#vision"  aria-controls="vision" role="tab" data-toggle="tab">our vision</a></li>
+                                <li role="presentation" class="active"><a  href="about_us.php#mission" aria-controls="mission" role="tab" data-toggle="tab">our mission</a></li>
+                                <li role="presentation"><a href="about_us.php#vision"  aria-controls="vision" role="tab" data-toggle="tab">our vision</a></li>
                             </ul>
 
                             <!-- Tab panes -->
@@ -297,7 +297,7 @@ session_start();
                         </div>
 
                         <div class="who_we_btn">
-                            <a class="trust_btn" href="about_us.html">read more</a>
+                            <a class="trust_btn" href="about_us.php">read more</a>
                         </div>
                     </div>
                 </div><!-- /.col-md-6 ends -->
@@ -450,7 +450,7 @@ session_start();
                                 </div>
                                 <div class="service_content">
                                     <div class="service_title">
-                                        <a href="single_service.html"><h3>ground shipping</h3></a>
+                                        <a href="single_service.php"><h3>ground shipping</h3></a>
                                     </div>
                                     <div class="service_text">
                                         <p>we are classified for delievery service for any destinations.</p>
@@ -465,7 +465,7 @@ session_start();
                                 </div>
                                 <div class="service_content">
                                     <div class="service_title">
-                                        <a href="single_service.html"><h3>high equipments</h3></a>
+                                        <a href="single_service.php"><h3>high equipments</h3></a>
                                     </div>
                                     <div class="service_text">
                                         <p>with an over 250 vehicles ranging in size from one tonne trucks up to semi trailers.</p>
@@ -480,7 +480,7 @@ session_start();
                                 </div>
                                 <div class="service_content">
                                     <div class="service_title">
-                                        <a href="single_service.html"><h3>fast delivery</h3></a>
+                                        <a href="single_service.php"><h3>fast delivery</h3></a>
                                     </div>
                                     <div class="service_text">
                                         <p>we provide high customer service of fast delievery to make a quick freight forwarding</p>
@@ -656,9 +656,9 @@ session_start();
                         <ul>
                             <li><a href="index.php">Home</a></li>
                             <li><a href="about_us.php">About Us</a></li>
-                            <li><a href="track_trace.html">Track & Trace</a></li>
+                            <li><a href="track_trace.php">Track & Trace</a></li>
                             <li><a href="http://trusttransport.themeebit.com/blog">News</a></li>
-                            <li><a href="http://trusttransport.themeebit.com/contcat.html">Contact Us</a></li>
+                            <li><a href="http://trusttransport.themeebit.com/contcat.php">Contact Us</a></li>
                         </ul>
                     </div>
                 </div>

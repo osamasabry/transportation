@@ -199,7 +199,7 @@
                                             <div class="dropdwon">
                                                 <ul>
                                                 
-                                                    <li><a href="news_list.html">news list</a></li>
+                                                    <li><a href="news_list.php">news list</a></li>
                                                     <li><a href="news.php">news grid</a></li>
                                                 </ul>
                                             </div>
@@ -397,7 +397,7 @@
                         <ul>
                             <li><a href="index.php">Home</a></li>
                             <li><a href="about_us.php">About Us</a></li>
-                            <li><a href="track_trace.html">Track & Trace</a></li>
+                            <li><a href="track_trace.php">Track & Trace</a></li>
                             <li><a href="http://trusttransport.themeebit.com/blog">News</a></li>
                             <li><a href="http://trusttransport.themeebit.com/contcat.php">Contact Us</a></li>
                         </ul>

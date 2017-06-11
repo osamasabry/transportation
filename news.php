@@ -182,7 +182,7 @@ session_start();
                                          
                                         </li>
 
-                                   <!--      <li><a href="track_trace.html">Track & Trace</a></li> -->
+                                   <!--      <li><a href="track_trace.php">Track & Trace</a></li> -->
                                       
                                      
                                         <li class="has_dropdown">
@@ -190,7 +190,7 @@ session_start();
                                             <div class="dropdwon">
                                                 <ul>
                                                 
-                                                    <li><a href="news_list.html">news list</a></li>
+                                                    <li><a href="news_list.php">news list</a></li>
                                                     <li><a href="news.php">news grid</a></li>
                                                 </ul>
                                             </div>
@@ -258,7 +258,7 @@ session_start();
                                 </div>
                                 <div class="service_content">
                                     <div class="service_title">
-                                        <a href="single_service.html"><h3>ground shipping</h3></a>
+                                        <a href="single_service.php"><h3>ground shipping</h3></a>
                                     </div>
                                     <div class="service_text">
                                         <p>we are classified for delievery service for any destinations.</p>
@@ -273,7 +273,7 @@ session_start();
                                 </div>
                                 <div class="service_content">
                                     <div class="service_title">
-                                        <a href="single_service.html"><h3>high equipments</h3></a>
+                                        <a href="single_service.php"><h3>high equipments</h3></a>
                                     </div>
                                     <div class="service_text">
                                         <p>with an over 250 vehicles ranging in size from one tonne trucks up to semi trailers.</p>
@@ -288,7 +288,7 @@ session_start();
                                 </div>
                                 <div class="service_content">
                                     <div class="service_title">
-                                        <a href="single_service.html"><h3>fast delivery</h3></a>
+                                        <a href="single_service.php"><h3>fast delivery</h3></a>
                                     </div>
                                     <div class="service_text">
                                         <p>we provide high customer service of fast delievery to make a quick freight forwarding</p>
@@ -459,7 +459,7 @@ session_start();
                         <ul>
                             <li><a href="index.php">Home</a></li>
                             <li><a href="about_us.php">About Us</a></li>
-                            <li><a href="track_trace.html">Track & Trace</a></li>
+                            <li><a href="track_trace.php">Track & Trace</a></li>
                             <li><a href="http://trusttransport.themeebit.com/blog">News</a></li>
                             <li><a href="http://trusttransport.themeebit.com/contcat.php">Contact Us</a></li>
                         </ul>

@@ -189,8 +189,8 @@ session_start();
                                             <div class="dropdwon">
                                                 <ul>
                                                 
-                                                    <li><a href="news_list.html">news list</a></li>
-                                                    <li><a href="news.html">news grid</a></li>
+                                                    <li><a href="news_list.php">news list</a></li>
+                                                    <li><a href="news.php">news grid</a></li>
                                                 </ul>
                                             </div>
                                         </li>
@@ -256,7 +256,7 @@ session_start();
                                 </div>
                                 <div class="service_content">
                                     <div class="service_title">
-                                        <a href="single_service.html"><h3>ground shipping</h3></a>
+                                        <a href="single_service.php"><h3>ground shipping</h3></a>
                                     </div>
                                     <div class="service_text">
                                         <p>we are classified for delievery service for any destinations.</p>
@@ -271,7 +271,7 @@ session_start();
                                 </div>
                                 <div class="service_content">
                                     <div class="service_title">
-                                        <a href="single_service.html"><h3>high equipments</h3></a>
+                                        <a href="single_service.php"><h3>high equipments</h3></a>
                                     </div>
                                     <div class="service_text">
                                         <p>with an over 250 vehicles ranging in size from one tonne trucks up to semi trailers.</p>
@@ -286,7 +286,7 @@ session_start();
                                 </div>
                                 <div class="service_content">
                                     <div class="service_title">
-                                        <a href="single_service.html"><h3>fast delivery</h3></a>
+                                        <a href="single_service.php"><h3>fast delivery</h3></a>
                                     </div>
                                     <div class="service_text">
                                         <p>we provide high customer service of fast delievery to make a quick freight forwarding</p>
@@ -406,7 +406,7 @@ session_start();
                         </div>
 
                         <div class="who_we_btn">
-                            <a class="trust_btn" href="about_us.html">read more</a>
+                            <a class="trust_btn" href="about_us.php">read more</a>
                         </div>
                     </div>
                 </div><!-- /.col-md-6 ends -->
@@ -525,13 +525,13 @@ session_start();
 
 
                                     <div class="blog_title">
-                                        <a href="single_news.html"><h3>track and trace</h3></a>
+                                        <a href="single_news.php"><h3>track and trace</h3></a>
                                     </div>
                                     <div class="blog_text">
                                         <p>we will supply vehicle inspections and specialised equiments, large and small trucks to be classified to heavy haulage.</p>
                                     </div>
                                     <div class="read_more">
-                                        <a href="single_news.html">read more <span class="fa fa-long-arrow-right"></span></a>
+                                        <a href="single_news.php">read more <span class="fa fa-long-arrow-right"></span></a>
                                     </div>
                                 </div>
                             </div>
@@ -549,13 +549,13 @@ session_start();
 
 
                                     <div class="blog_title">
-                                        <a href="single_news.html"><h3> road transportation</h3></a>
+                                        <a href="single_news.php"><h3> road transportation</h3></a>
                                     </div>
                                     <div class="blog_text">
                                         <p>we will cover any destination in middle east what ever it's long</p>
                                     </div>
                                     <div class="read_more">
-                                        <a href="single_news.html">read more <span class="fa fa-long-arrow-right"></span></a>
+                                        <a href="single_news.php">read more <span class="fa fa-long-arrow-right"></span></a>
                                     </div>
                                 </div>
                             </div>
@@ -574,13 +574,13 @@ session_start();
                         
 
                                     <div class="blog_title">
-                                        <a href="single_news.html"><h3>vehicle inspections</h3></a>
+                                        <a href="single_news.php"><h3>vehicle inspections</h3></a>
                                     </div>
                                     <div class="blog_text">
                                         <p>our subcontractors are checked regulary to ensure they are maintaining their vehicles and equipments.</p>
                                     </div>
                                     <div class="read_more">
-                                        <a href="single_news.html">read more <span class="fa fa-long-arrow-right"></span></a>
+                                        <a href="single_news.php">read more <span class="fa fa-long-arrow-right"></span></a>
                                     </div>
                                 </div>
                             </div>
@@ -746,10 +746,10 @@ session_start();
                     <div class="footer_menu clearfix">
                         <ul>
                             <li><a href="index.php">Home</a></li>
-                            <li><a href="about_us.html">About Us</a></li>
-                            <li><a href="track_trace.html">Track & Trace</a></li>
+                            <li><a href="about_us.php">About Us</a></li>
+                            <li><a href="track_trace.php">Track & Trace</a></li>
                             <li><a href="http://trusttransport.themeebit.com/blog">News</a></li>
-                            <li><a href="http://trusttransport.themeebit.com/contcat.html">Contact Us</a></li>
+                            <li><a href="http://trusttransport.themeebit.com/contcat.php">Contact Us</a></li>
                         </ul>
                     </div>
                 </div>

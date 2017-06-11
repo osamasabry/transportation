@@ -216,7 +216,7 @@ if (isset($_POST['username'])&&isset($_POST['password'])) {
                                          
                                         </li>
 
-                                     <!--    <li><a href="track_trace.html">Track & Trace</a></li> -->
+                                     <!--    <li><a href="track_trace.php">Track & Trace</a></li> -->
                                       
                                      
                                         <li class="has_dropdown">
@@ -224,14 +224,14 @@ if (isset($_POST['username'])&&isset($_POST['password'])) {
                                             <div class="dropdwon">
                                                 <ul>
                                                 
-                                                    <li><a href="news_list.html">news list</a></li>
+                                                    <li><a href="news_list.php">news list</a></li>
                                                     <li><a href="news.php">news grid</a></li>
                                                 </ul>
                                             </div>
                                         </li>
                                         <li><a href="contact.php">Order</a></li>
                                           <li>
-                                            <a href="login.html">Login<span class="fa fa-angle-down"></span></a>
+                                            <a href="login.php">Login<span class="fa fa-angle-down"></span></a>
                                          
                                         </li>
                                     </ul>
@@ -274,7 +274,7 @@ if (isset($_POST['username'])&&isset($_POST['password'])) {
                                 
                                 <div class="rem_for">
                                    <!--<input id="remeber" type="checkbox" name="remember" value=""><label for="remeber"><span></span>Remember Me</label>
-                                    <a href="login.html#">Forgot Password?</a>-->
+                                    <a href="login.php#">Forgot Password?</a>-->
                                 </div>
                                 <div class="login_content">
                                     <button class="trust_btn">Log in</button>
@@ -410,10 +410,10 @@ if (isset($_POST['username'])&&isset($_POST['password'])) {
                     <div class="footer_menu clearfix">
                         <ul>
                             <li><a href="index.php">Home</a></li>
-                            <li><a href="about_us.html">About Us</a></li>
-                            <li><a href="track_trace.html">Track & Trace</a></li>
+                            <li><a href="about_us.php">About Us</a></li>
+                            <li><a href="track_trace.php">Track & Trace</a></li>
                             <li><a href="http://trusttransport.themeebit.com/blog">News</a></li>
-                            <li><a href="http://trusttransport.themeebit.com/contcat.html">Contact Us</a></li>
+                            <li><a href="http://trusttransport.themeebit.com/contcat.php">Contact Us</a></li>
                         </ul>
                     </div>
                 </div>
