@@ -11,18 +11,21 @@ require_once 'connection.php';
             $order= mysqli_query($link,"select * from orders where id='$id'");
             $orders=mysqli_fetch_array($order);
 
-            $result= mysqli_query($link,"select * from users where active=1 and user_type = 3 and users.id not in (select driver_id FROM orders where orders.accepted = 1 )");
-            $drivers = [];
-            while($res1 = mysqli_fetch_assoc($result)){
-                $drivers[] = $res1;
+            $result= mysqli_query($link,"select * from users where active=1 and user_type = 3 and users.id not in (select driver_id FROM orders where orders.accepted = 1 and orders.from_date not between ".$orders['from_date']." and ".$orders['to_date']."orders.to_date not between ".$orders['from_date']." and ".$orders['to_date'].")");
+            if($result){
+                $drivers = [];
+                while($res1 = mysqli_fetch_assoc($result)){
+                    $drivers[] = $res1;
+                }
             }
 
-            $result2= mysqli_query($link,"select * from trucks where active=1 and trucks.id not in (select truck_id FROM orders where orders.accepted = 1 )");
-            $trucks = [];
-            while($res1 = mysqli_fetch_assoc($result2)){
-                $trucks[] = $res1;
+            $result2= mysqli_query($link,"select * from trucks where active=1 and trucks.id not in (select truck_id FROM orders where orders.accepted = 1 and orders.from_date not between ".$orders['from_date']." and ".$orders['to_date']."orders.to_place not between ".$orders['from_date']." and ".$orders['to_date'].")");
+            if($result2){
+                $trucks = [];
+                while($res1 = mysqli_fetch_assoc($result2)){
+                    $trucks[] = $res1;
+                }
             }
-
      }else if(isset($_SESSION['username']))
         header('location:home.php');
 
@@ -311,8 +314,11 @@ while($res1 = mysqli_fetch_assoc($result)){
 
                                     <div class="form_half left">
                                         <select required=""  class="form_half" name="driver" style="width:460px; border-radius:10px;">
+                                            <?php if(empty($trucks)){
+                                                    echo "<option value='0'>There is no Available Drivers</option>";
+                                                }else{ ?>
                                              <option value="0">Assign Driver</option>
-                                             <?php
+                                             <?php }
                                                 foreach ($drivers as $key => $value) {
                                                     echo "<option value=".$value['id'].">".$value['name']."</option>";    
                                                 }
@@ -321,8 +327,11 @@ while($res1 = mysqli_fetch_assoc($result)){
                                     </div>
                                     <div class="form_half right">
                                          <select required=""  class="form_half" name="truck" style="width:460px; border-radius:10px;">
+                                            <?php if(empty($trucks)){
+                                                    echo "<option value='0'>There is no Available Trucks</option>";
+                                                }else{ ?>
                                              <option value="0">Assign Truck</option>
-                                              <?php 
+                                              <?php } 
                                                 foreach ($trucks as $key => $value) {
                                                     echo "<option value=".$value['id'].">".$value['type']."</option>";    
                                                 }
