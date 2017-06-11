@@ -68,7 +68,7 @@
                 <div class="header_middle_wrapper clearfix ">
                     <div class="col-md-3 xs_fullwidth col-xs-3">
                         <div class="logo_container">
-                            <a href="index.html"><img src="images/logo.png" alt="logo Here"></a>
+                            <a href="index.php"><img src="images/logo.png" alt="logo Here"></a>
                         </div>
                        
                     </div>
@@ -198,33 +198,6 @@
                                          
                                         </li>
                                     </ul>
-
-
-                                    <div class="search_form">
-                                        <div class="search_btn" data-toggle="modal" data-target="#search_modal">
-                                            <span class="fa fa-search"></span>
-                                        </div>
-
-                                        <!-- search Modal -->
-                                        <div class="modal fade" id="search_modal" tabindex="-1" role="dialog">
-                                          <div class="modal-dialog s_modal" role="document">
-                                            <div class="modal-content">
-                                              <div class="modal-body">
-                                                <div class="search_form_wrapper">
-                                                    <form method="post">
-                                                        <div class="search_input">
-                                                            <input type="text" name="search_field" placeholder="Search Query...">
-                                                            <button class="submit_btn" type="submit">
-                                                                <span class="fa fa-search"></span>
-                                                            </button>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                    </div>
                                 </div><!-- /.navbar-collapse -->
                             </nav>
                         </div><!-- main menu ends -->

@@ -11,7 +11,7 @@ require_once 'connection.php';
             $order= mysqli_query($link,"select * from orders where id='$id'");
             $orders=mysqli_fetch_array($order);
 
-            $result= mysqli_query($link,"select * from users where active=1 and users.id not in (select driver_id FROM orders where orders.accepted = 1 )");
+            $result= mysqli_query($link,"select * from users where active=1 and user_type = 3 and users.id not in (select driver_id FROM orders where orders.accepted = 1 )");
             $drivers = [];
             while($res1 = mysqli_fetch_assoc($result)){
                 $drivers[] = $res1;
@@ -235,33 +235,6 @@ while($res1 = mysqli_fetch_assoc($result)){
                                          
                                         </li>
                                     </ul>
-
-
-                                    <div class="search_form">
-                                        <div class="search_btn" data-toggle="modal" data-target="#search_modal">
-                                            <span class="fa fa-search"></span>
-                                        </div>
-
-                                        <!-- search Modal -->
-                                        <div class="modal fade" id="search_modal" tabindex="-1" role="dialog">
-                                          <div class="modal-dialog s_modal" role="document">
-                                            <div class="modal-content">
-                                              <div class="modal-body">
-                                                <div class="search_form_wrapper">
-                                                    <form method="post">
-                                                        <div class="search_input">
-                                                            <input type="text" name="search_field" placeholder="Search Query...">
-                                                            <button class="submit_btn" type="submit">
-                                                                <span class="fa fa-search"></span>
-                                                            </button>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                    </div>
                                 </div><!-- /.navbar-collapse -->
                             </nav>
                         </div><!-- main menu ends -->

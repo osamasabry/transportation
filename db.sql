@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 11, 2017 at 02:11 PM
+-- Generation Time: Jun 11, 2017 at 10:11 PM
 -- Server version: 5.7.18-0ubuntu0.16.04.1
--- PHP Version: 5.6.30-10+deb.sury.org~xenial+2
+-- PHP Version: 7.0.15-0ubuntu0.16.04.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -59,15 +59,10 @@ CREATE TABLE `orders` (
   `emp_id` int(11) DEFAULT NULL,
   `driver_id` int(11) DEFAULT NULL,
   `accepted` tinyint(1) NOT NULL DEFAULT '0',
-  `truck_id` int(11) NOT NULL
+  `truck_id` int(11) DEFAULT NULL,
+  `address` varchar(300) NOT NULL,
+  `Note` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `orders`
---
-
-INSERT INTO `orders` (`id`, `customer_name`, `from_place`, `to_place`, `from_date`, `to_date`, `email`, `phone`, `emp_id`, `driver_id`, `accepted`, `truck_id`) VALUES
-(1, 'ali elsayed', 1, 2, '2017-06-01', '2017-06-15', 'jhjhjhj', 6556565, 2, NULL, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -77,19 +72,11 @@ INSERT INTO `orders` (`id`, `customer_name`, `from_place`, `to_place`, `from_dat
 
 CREATE TABLE `trucks` (
   `id` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL,
   `type` varchar(50) NOT NULL,
   `model` varchar(50) NOT NULL,
   `active` tinyint(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `trucks`
---
-
-INSERT INTO `trucks` (`id`, `name`, `type`, `model`, `active`) VALUES
-(1, 'lorry', 'chevrolet', '2008', 1),
-(2, 'lorry2', 'chevrolet', '2010', 1);
 
 -- --------------------------------------------------------
 
@@ -108,13 +95,6 @@ CREATE TABLE `users` (
   `active` tinyint(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `name`, `user_name`, `password`, `phone`, `address`, `user_type`, `active`) VALUES
-(1, 'shrouk elsayed', 'shrouk', '123456', 8778787, 'ghghg', 1, 1),
-(2, 'osama sabry', 'osama', '12345', 77878788, 'ghjjjhj', 2, 1);
 
 -- --------------------------------------------------------
 
@@ -189,22 +169,23 @@ ALTER TABLE `governorates`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `trucks`
 --
 ALTER TABLE `trucks`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 --
 -- AUTO_INCREMENT for table `users_types`
 --
 ALTER TABLE `users_types`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

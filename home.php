@@ -12,7 +12,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Admin Home</title>
+    <title><?php echo $_SESSION['username']; ?> Home</title>
 
     <!-- owl carousel css -->
     <link rel="stylesheet" href="css/owl.carousel.css"/>
@@ -70,7 +70,7 @@
                 <div class="header_middle_wrapper clearfix ">
                     <div class="col-md-3 xs_fullwidth col-xs-3">
                         <div class="logo_container">
-                            <a href="index.html"><img src="images/logo.png" alt="logo Here"></a>
+                            <a href="index.php"><img src="images/logo.png" alt="logo Here"></a>
                         </div>
                        
                     </div>
@@ -200,33 +200,6 @@
                                          
                                         </li>
                                     </ul>
-
-
-                                    <div class="search_form">
-                                        <div class="search_btn" data-toggle="modal" data-target="#search_modal">
-                                            <span class="fa fa-search"></span>
-                                        </div>
-
-                                        <!-- search Modal -->
-                                        <div class="modal fade" id="search_modal" tabindex="-1" role="dialog">
-                                          <div class="modal-dialog s_modal" role="document">
-                                            <div class="modal-content">
-                                              <div class="modal-body">
-                                                <div class="search_form_wrapper">
-                                                    <form method="post">
-                                                        <div class="search_input">
-                                                            <input type="text" name="search_field" placeholder="Search Query...">
-                                                            <button class="submit_btn" type="submit">
-                                                                <span class="fa fa-search"></span>
-                                                            </button>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                    </div>
                                 </div><!-- /.navbar-collapse -->
                             </nav>
                         </div><!-- main menu ends -->
@@ -280,7 +253,7 @@
                         <div class="tab-content">
                         <?php  //if(isset($_SESSION['user_type']) && $_SESSION['user_type'] == 2 ){ ?>
                             <div id="menu1" class="tab-pane fade">
-                                <h3>Customers Orders</h3>
+                                <p><h3>Customers Orders</h3></p>
                                 <?php 
                                     require_once 'connection.php';
                                     $t = ($_SESSION['user_type'] == 2)?' where emp_id is null' : '';
@@ -345,7 +318,7 @@
                                         $date=$data[$i]["from_date"] .'/'.$data[$i]['to_date'];
                                         $place=$from .'/'.$to;
                                         $accepted = ($data[$i]['accepted'] == 0)? 'False' : 'True';   
-                                        $notes = 'hjhjhj';
+                                        $notes = $data[$i]['Note'];
                                             echo "<tr>";
                                               echo "<td>".$id."</td>";
                                               echo "<td>".$name."</td>";
@@ -369,7 +342,7 @@
                             <?php// }elseif (isset($_SESSION['user_type']) && $_SESSION['user_type'] == 2){
                              ?>
                             <div id="menu5" class="tab-pane fade">
-                                <h3>My Orders</h3>
+                                <p><h3>My Orders</h3></p>
                                 <?php 
                                     require_once 'connection.php';
 
@@ -435,7 +408,7 @@
                                         $date=$data[$i]["from_date"] .'/'.$data[$i]['to_date'];
                                         $place=$from .'/'.$to;
                                         $accepted = ($data[$i]['accepted'] == 0)? 'False' : 'True';   
-                                        $notes = 'hjhjhj';
+                                        $notes = $data[$i]['Note'];
                                             echo "<tr>";
                                               echo "<td>".$id."</td>";
                                               echo "<td>".$name."</td>";
