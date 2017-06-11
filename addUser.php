@@ -17,16 +17,16 @@ $result=mysqli_query($link,$sql);
 
 $n=mysqli_num_rows($result);
 if($n==0){
-        $sql=mysqli_query($link, "INSERT INTO  users  VALUES ('$id','$name','$user_name','$password','$phone','$address',$type)");
-            mysqli_close($link);
-			header('location:home.php');
-    }elseif($n== 1){
- 		$sql=mysqli_query($link, "UPDATE `users` SET `name`='$name',`user_name`='$user_name',`password`='$password',`phone`='$phone',`address`='$address',`user_type`= '$type' WHERE id = ".$id);
-       	mysqli_close($link);
-		header('location:home.php');
-   	}else{ 
-   		include("errorEmp.html");    
-    }
+    $sql=mysqli_query($link, "INSERT INTO  users  VALUES ('$id','$name','$user_name','$password','$phone','$address',$type,true)");
+    mysqli_close($link);
+	header('location:home.php');
+}elseif($n== 1){
+	$sql=mysqli_query($link, "UPDATE `users` SET `name`='$name',`user_name`='$user_name',`password`='$password',`phone`='$phone',`address`='$address',`user_type`= '$type'   WHERE id = ".$id);
+   	mysqli_close($link);
+	header('location:home.php');
+}else{ 
+	include("errorEmp.html");    
+}
 
 ?>
 

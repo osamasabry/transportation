@@ -5,9 +5,9 @@ require_once 'connection.php';
 
 $id=$_GET["id"];
 $type=$_GET["type"];
-$active=($_GET["active"] == 'Deactivate')? false : true;
+$active=($_GET["active"] == 'Deactivate')? 0 : 1;
 
-// var_dump($id);die;
+// var_dump($_GET);die;
 if(isset($type) && $type == 'truck'){
 	$sql=("SELECT * FROM trucks WHERE id like '$id'");
 	$result=mysqli_query($link,$sql);

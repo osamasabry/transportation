@@ -480,22 +480,22 @@
                                               </tr>";
                                          for($i=0;$i<$count;$i++)
                                         {
-
-                                        $id=$data[$i]["id"];
-                                        $name=$data[$i]["name"];
-                                        $phone=$data[$i]["phone"];
-                                        $address=$data[$i]["address"];
-                                        $active=($data[$i]["active"] == true) ? 'Deactivate' : 'Activate';
+                                            $id=$data[$i]["id"];
+                                            $name=$data[$i]["name"];
+                                            $phone=$data[$i]["phone"];
+                                            $address=$data[$i]["address"];
+                                            $active=($data[$i]["active"] == true) ? 'Deactivate' : 'Activate';
                                         
                                             echo "<tr>";
-                                              echo "<td>".$id."</td>";
-                                              echo "<td>".$name."</td>";
-                                              echo "<td>".$phone."</td>";
-                                              echo "<td>".$address."</td>";
-                                              echo "<td> <div class='demotextt'><a href='addEmp.php?id=".$id."'>Edit</a></div></td>";
-                                              echo "<td> <div class='demotextt'><a href='activate.php?active=$active&id=".$id."'>$active</a></div></td>";
-                                              echo "</tr>";
-                                              }
+                                            echo "<td>".$id."</td>";
+                                            echo "<td>".$name."</td>";
+                                            echo "<td>".$phone."</td>";
+                                            echo "<td>".$address."</td>";
+                                            echo "<td> <div class='demotextt'><a href='addEmp.php?id=".$id."'>Edit</a></div></td>";
+                                            echo "<td> <div class='demotextt'><a href='activate.php?active=$active&id=".$id."'>$active</a></div></td>";
+                                            echo "</tr>";
+                                            $active ='';  
+                                            }
                                          echo "</table>"; 
                                         ?>
                                     <div class="demotext">
@@ -554,21 +554,22 @@
                                               </tr>";
                                          for($i=0;$i<$count;$i++)
                                         {
-                                        $id=$data[$i]["id"];
-                                        $name=$data[$i]["name"];
-                                        $phone=$data[$i]["phone"];
-                                        $address=$data[$i]["address"];
-                                        $active=($data[$i]["active"] == true) ? 'Deactivate' : 'Activate';
+                                            $id=$data[$i]["id"];
+                                            $name=$data[$i]["name"];
+                                            $phone=$data[$i]["phone"];
+                                            $address=$data[$i]["address"];
+                                            $active=($data[$i]["active"] == true) ? 'Deactivate' : 'Activate';
                                             echo "<tr>";
-                                              echo "<td>".$id."</td>";
-                                              echo "<td>".$name."</td>";
-                                              echo "<td>".$phone."</td>";
-                                              echo "<td>".$address."</td>";
-                                              echo "<td> <div class='demotextt'><a href='adddriver.php?id=".$id."'>Edit</a></div></td>";
-                                              echo "<td> <div class='demotextt'><a href='activate.php?active=$active&id=".$id."'>$active</a></div></td>";
-                                              echo "</tr>";
-                                              }
-                                         echo "</table>"; 
+                                            echo "<td>".$id."</td>";
+                                            echo "<td>".$name."</td>";
+                                            echo "<td>".$phone."</td>";
+                                            echo "<td>".$address."</td>";
+                                            echo "<td> <div class='demotextt'><a href='adddriver.php?id=".$id."'>Edit</a></div></td>";
+                                            echo "<td> <div class='demotextt'><a href='activate.php?active=$active&id=".$id."'>$active</a></div></td>";
+                                            echo "</tr>";
+                                            $active ='';  
+                                        }
+                                        echo "</table>"; 
                                     ?>
                                     <div class="demotext">
                                         <button  type=submit class="trust_btn" onclick="showDiv('driver')">Search</button>
@@ -622,19 +623,20 @@
                                               </tr>";
                                          for($i=0;$i<$count;$i++)
                                         {
-                                        $id=$data[$i]["id"];
-                                        $type=$data[$i]["type"];
-                                        $model=$data[$i]["model"];
-                                        $active=($data[$i]["active"] == true) ? 'Deactivate' : 'Activate';
+                                            $id=$data[$i]["id"];
+                                            $type=$data[$i]["type"];
+                                            $model=$data[$i]["model"];
+                                            $active=($data[$i]["active"] == true) ? 'Deactivate' : 'Activate';
                                             echo "<tr>";
-                                              echo "<td>".$id."</td>";
-                                              echo "<td>".$type."</td>";
-                                              echo "<td>".$model."</td>";
-                                              echo "<td> <div class='demotextt'><a href='addtruck.php?id=".$id."'>Edit</a></div></td>";
-                                              echo "<td> <div class='demotextt'><a href='activate.php?active=$active&type=truck&id=".$id."'>$active</a></div></td>";
-                                              echo "</tr>";
-                                              }
-                                         echo "</table>"; 
+                                            echo "<td>".$id."</td>";
+                                            echo "<td>".$type."</td>";
+                                            echo "<td>".$model."</td>";
+                                            echo "<td> <div class='demotextt'><a href='addtruck.php?id=".$id."'>Edit</a></div></td>";
+                                            echo "<td> <div class='demotextt'><a href='activate.php?active=$active&type=truck&id=".$id."'>$active</a></div></td>";
+                                            echo "</tr>";
+                                            $active ='';  
+                                        }
+                                        echo "</table>"; 
                                     ?>
                                     <div class="demotext">
                                         <button  type=submit class="trust_btn" onclick="showDiv('truck')">Search</button>
