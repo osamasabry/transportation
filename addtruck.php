@@ -204,9 +204,9 @@
                                                 </ul>
                                             </div>
                                         </li>
-                                        <li><a href="contact.php">contact</a></li>
+                                        <li><a href="home.php">Profile</a></li>
                                           <li>
-                                            <a href="login.html">Admin<span class="fa fa-angle-down"></span></a>
+                                            <a href="logout.php">Logout<span class="fa fa-angle-down"></span></a>
                                          
                                         </li>
                                     </ul>
@@ -273,14 +273,15 @@
 
                         <div class="contact_form">
                             <form action="addTruck.php" method="post">
+
+                                <input type="hidden" name="id" value="<?php isset($_GET['id']) ? print_r($truck['id']) : ''; ?>">
+
+                                
                                 <div class="form_half left">
-                                    <input type="text" name="id" placeholder="Truck ID"  value="<?php isset($_GET['id']) ? print_r($truck['id']) : ''; ?>">
-                                </div>
-                                <div class="form_half right">
                                     <input type="text" name="type"placeholder="Truck Type" value="<?php isset($_GET['id']) ? print_r($truck['type']) : ''; ?>">
                                 </div>
                                 
-                                <div class="form_half left">
+                                <div class="form_half right">
                                     <input type="text" name="model" placeholder="Truck Model" value="<?php isset($_GET['id']) ? print_r($truck['model']) : ''; ?>">
                                 </div>
                                 <div class="contact_btn_wrapper">

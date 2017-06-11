@@ -195,7 +195,7 @@ session_start();
                                                 </ul>
                                             </div>
                                         </li>
-                                    <?php if(isset($_SESSION["username"])&&isset($_SESSION["password"])):?>    
+                                    <?php if(isset($_SESSION["username"])):?>    
                                         <li><a href="home.php">Profile</a></li>
                                           <li>
                                             <a href="logout.php">Logout<span class="fa fa-angle-down"></span></a>

@@ -204,9 +204,9 @@
                                                 </ul>
                                             </div>
                                         </li>
-                                        <li><a href="contact.php">contact</a></li>
+                                        <li><a href="home.php">Profile</a></li>
                                           <li>
-                                            <a href="login.html">Admin<span class="fa fa-angle-down"></span></a>
+                                            <a href="logout.php">Logout<span class="fa fa-angle-down"></span></a>
                                          
                                         </li>
                                     </ul>
@@ -274,23 +274,22 @@
                         <div class="contact_form">
                             <form action="addUser.php" method="post">
                                 <input type="hidden" name="type" value="3">
+                                <input type="hidden" name="id" value="<?php isset($_GET['id']) ? print_r($driver['id']) : ''; ?>">
+                                
                                 <div class="form_half left">
-                                    <input type="text" name="id" placeholder="Driver ID" value="<?php isset($_GET['id']) ? print_r($driver['id']) : ''; ?>">
-                                </div>
-                                <div class="form_half right">
                                     <input type="text" name="name" placeholder="Name" value="<?php isset($_GET['id']) ? print_r($driver['name']) : ''; ?>">
                                 </div>
                                 
-                                <div class="form_half left">
+                                <div class="form_half right">
                                     <input type="text" name="address" placeholder="Address" value="<?php isset($_GET['id']) ? print_r($driver['address']) : ''; ?>">
                                 </div>
-                                <div class="form_half right">
+                                <div class="form_half left">
                                     <input type="text" name="user_name" placeholder="User Name" value="<?php isset($_GET['id']) ? print_r($driver['user_name']) : ''; ?>">
                                 </div>
-                                <div class="form_half left">
+                                <div class="form_half right">
                                     <input type="password" name="password" placeholder="Password" value="<?php isset($_GET['id']) ? print_r($driver['password']) : ''; ?>">
                                 </div>
-                                <div class="form_half right">
+                                <div class="form_half left">
                                     <input type="text" name="phone" placeholder="ِPhone Number" value="<?php isset($_GET['id']) ? print_r($driver['phone']) : ''; ?>">
                                 </div>
                                 <div class="contact_btn_wrapper">

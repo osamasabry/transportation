@@ -6,7 +6,6 @@
         $sql=("SELECT * FROM users WHERE id =".$_GET['id']);
         $result=mysqli_query($link,$sql);
         $employee = mysqli_fetch_array($result);
-        // var_dump($employee['id']);die;
 
     }elseif(!isset($_SESSION['username']))
         header('location:index.php');
@@ -206,9 +205,9 @@
                                                 </ul>
                                             </div>
                                         </li>
-                                        <li><a href="contact.html">contact</a></li>
+                                        <li><a href="home.php">Profile</a></li>
                                           <li>
-                                            <a href="login.html">Admin<span class="fa fa-angle-down"></span></a>
+                                            <a href="logout.php">Logout<span class="fa fa-angle-down"></span></a>
                                          
                                         </li>
                                     </ul>
@@ -277,24 +276,23 @@
                             <form action="addUser.php" method="post">
                                 
                                 <input type="hidden" name="type" value="2">
+                                <input type="hidden" name="id" value="<?php isset($_GET['id']) ? print_r($_GET['id']) : ''; ?>">
 
-                                <div class="form_half left">
-                                    <input type="text" name="id" placeholder="Emp ID" value="<?php isset($_GET['id']) ? print_r($employee['id']) : ''; ?>">
-                                </div>
-                                <div class="form_half right">
-                                    <input type="text" name="name" placeholder="Name" value="<?php isset($_GET['id']) ? print_r($employee['name']) : ''; ?>">
-                                </div>
                                 
                                 <div class="form_half left">
+                                    <input type="text" name="name" placeholder="Full Name" value="<?php isset($_GET['id']) ? print_r($employee['name']) : ''; ?>">
+                                </div>
+                                
+                                <div class="form_half right">
                                     <input type="text" name="address" placeholder="Address" value="<?php isset($_GET['id']) ? print_r($employee['address']) : ''; ?>">
                                 </div>
-                                <div class="form_half right">
+                                <div class="form_half left">
                                     <input type="text" name="user_name" placeholder="User Name" value="<?php isset($_GET['id']) ? print_r($employee['user_name']) : ''; ?>">
                                 </div>
-                                <div class="form_half left">
+                                <div class="form_half right">
                                     <input type="password" name="password" placeholder="Password" value="<?php isset($_GET['id']) ? print_r($employee['password']) : ''; ?>">
                                 </div>
-                                <div class="form_half right">
+                                <div class="form_half left">
                                     <input type="text" name="phone" placeholder="ِPhone Number" value="<?php isset($_GET['id']) ? print_r($employee['phone']) : ''; ?>">
                                 </div>
                                 <div class="contact_btn_wrapper">

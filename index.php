@@ -194,7 +194,7 @@ session_start();
                                                 </ul>
                                             </div>
                                         </li>
-                                        <?php if(isset($_SESSION["username"])&&isset($_SESSION["password"])):?>    
+                                        <?php if(isset($_SESSION["username"])):?>    
                                         <li><a href="home.php">Profile</a></li>
                                           <li>
                                             <a href="logout.php">Logout<span class="fa fa-angle-down"></span></a>
@@ -203,7 +203,7 @@ session_start();
                                     <?php else: ?>
                                         <li><a href="contact.php">Order</a></li>
                                           <li>
-                                            <a href="login.html">LogIn<span class="fa fa-angle-down"></span></a>
+                                            <a href="login.php">LogIn<span class="fa fa-angle-down"></span></a>
                                          
                                         </li>
                                     <?php endif;?>
