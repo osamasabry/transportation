@@ -700,9 +700,9 @@
                                             else
                                                 $driver_id = 'Not Assigned';
 
-                                            $sql6=("SELECT name FROM trucks where id = ".$data[$i]['truck_id']);
+                                            $sql6=("SELECT type FROM trucks where id = ".$data[$i]['truck_id']);
                                             $sql6Res=mysqli_query($link,$sql6);
-                                            $truck_id = mysqli_fetch_assoc($sql6Res)['name'];
+                                            $truck_id = mysqli_fetch_assoc($sql6Res)['type'];
 
                                             $id=$data[$i]["id"];
                                             $name=$data[$i]["customer_name"];
