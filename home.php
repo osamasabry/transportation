@@ -446,6 +446,7 @@
                                               echo "<td>".$accepted."</td>";
                                               echo "<td>".$truck_id."</td>";
                                               echo "<td>".$notes."</td>";
+                                              echo "<td> <div class='demotextt'><a href='sendMail.php?id=".$id."'>send Mail</a></div></td>";
                                               echo "</tr>";
                                               }
                                          echo "</table>"; 
