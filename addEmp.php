@@ -201,15 +201,23 @@
                                                 <ul>
                                                 
                                                     <li><a href="news_list.html">news list</a></li>
-                                                    <li><a href="news.html">news grid</a></li>
+                                                    <li><a href="news.php">news grid</a></li>
                                                 </ul>
                                             </div>
                                         </li>
-                                        <li><a href="home.php">Profile</a></li>
+                                         <?php if(isset($_SESSION["username"])):?>    
+                                            <li><a href="home.php">Profile</a></li>
+                                              <li>
+                                                <a href="logout.php">Logout<span class="fa fa-angle-down"></span></a>
+                                             
+                                            </li>
+                                         <?php else: ?>
+                                        <li><a href="contact.php">Order</a></li>
                                           <li>
-                                            <a href="logout.php">Logout<span class="fa fa-angle-down"></span></a>
+                                            <a href="login.php">LogIn<span class="fa fa-angle-down"></span></a>
                                          
                                         </li>
+                                    <?php endif;?>
                                     </ul>
                                 </div><!-- /.navbar-collapse -->
                             </nav>
