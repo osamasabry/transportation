@@ -10,7 +10,19 @@ require_once 'connection.php';
             $id=$_GET['id'];
             $order= mysqli_query($link,"select * from orders where id='$id'");
             $orders=mysqli_fetch_array($order);
-            // var_dump($orders)or die;
+
+            $result= mysqli_query($link,"select * from users where active=1 and users.id not in (select driver_id FROM orders where orders.accepted = 1 )");
+            $drivers = [];
+            while($res1 = mysqli_fetch_assoc($result)){
+                $drivers[] = $res1;
+            }
+
+            $result2= mysqli_query($link,"select * from trucks where active=1 and trucks.id not in (select truck_id FROM orders where orders.accepted = 1 )");
+            $trucks = [];
+            while($res1 = mysqli_fetch_assoc($result2)){
+                $trucks[] = $res1;
+            }
+
      }else if(isset($_SESSION['username']))
         header('location:home.php');
 
@@ -280,8 +292,10 @@ while($res1 = mysqli_fetch_assoc($result)){
                             <div class="title"><h2>Create Order</h2></div>
                         </div>
                         <?php if (isset($_GET['id'])): ?>
-                                <div class="contact_form">
+                            <div class="contact_form">
                                 <form action="addContact.php" method="post">
+                                    <input type="hidden" name="order_id" value="<?php echo $id ;?>">
+
                                     <div class="form_half left">
                                         <input type="text" placeholder="Name" name="nam" value="<?php echo $orders['customer_name']?>" disabled>
                                     </div>
@@ -301,27 +315,47 @@ while($res1 = mysqli_fetch_assoc($result)){
                                          <input type="text" placeholder="to_date" name="to_date" value="<?php echo $orders['to_date']?>" disabled>
        
                                     </div>
-                        <div class="form_half left">
-                            <?php 
-                                $sql3=("SELECT name FROM governorates where id =".$orders['from_place']);
-                                    $sql3Res=mysqli_query($link,$sql3);
-                                    $from = mysqli_fetch_assoc($sql3Res)['name'];
+                                    <div class="form_half left">
+                                        <?php 
+                                            $sql3=("SELECT name FROM governorates where id =".$orders['from_place']);
+                                                $sql3Res=mysqli_query($link,$sql3);
+                                                $from = mysqli_fetch_assoc($sql3Res)['name'];
 
-                            ?>
-                            <input type="text" placeholder="from_place" name="from_place" value="<?php echo $from?>" disabled>
-                        </div>
-                       <div class="form_half right">
-                            <?php
-                             $sql2=("SELECT name FROM governorates where id =".$orders['to_place']);
-                                $sql2Res=mysqli_query($link,$sql2);
-                                $to = mysqli_fetch_array($sql2Res)['name'];?>
+                                        ?>
+                                        <input type="text" placeholder="from_place" name="from_place" value="<?php echo $from?>" disabled>
+                                    </div>
+                                   <div class="form_half right">
+                                        <?php
+                                         $sql2=("SELECT name FROM governorates where id =".$orders['to_place']);
+                                            $sql2Res=mysqli_query($link,$sql2);
+                                            $to = mysqli_fetch_array($sql2Res)['name'];?>
 
-                             <input type="text" placeholder="to_place" name="to_place" value="<?php echo $to ?>" disabled>
-                        </div>
+                                         <input type="text" placeholder="to_place" name="to_place" value="<?php echo $to ?>" disabled>
+                                    </div>
                                     <br>
                                     <br>
                                     <textarea name="message" placeholder="Notes" cols="30" rows="8" disabled=""><?php echo $orders['Note'];?></textarea>
-                                    
+
+                                    <div class="form_half left">
+                                        <select required=""  class="form_half" name="driver" style="width:460px; border-radius:10px;">
+                                             <option value="0">Assign Driver</option>
+                                             <?php
+                                                foreach ($drivers as $key => $value) {
+                                                    echo "<option value=".$value['id'].">".$value['name']."</option>";    
+                                                }
+                                             ?> 
+                                         </select>
+                                    </div>
+                                    <div class="form_half right">
+                                         <select required=""  class="form_half" name="truck" style="width:460px; border-radius:10px;">
+                                             <option value="0">Assign Truck</option>
+                                              <?php 
+                                                foreach ($trucks as $key => $value) {
+                                                    echo "<option value=".$value['id'].">".$value['type']."</option>";    
+                                                }
+                                             ?>  
+                                         </select>
+                                    </div>
                                     
                                     
                                     <div class="contact_btn_wrapper">
@@ -353,26 +387,26 @@ while($res1 = mysqli_fetch_assoc($result)){
                                          <input required="" type="text" class="form_half" placeholder="To" onfocus="(this.type='date')" name="to_date"/>
        
                                     </div>
-                        <div class="form_half left">
-                             <select required=""  class="form_half" name="from_palce" style="width:460px; border-radius:10px;">
-                                 <option value="0">Select From</option>
-                                 <?php
-                                    foreach ($data as $key => $value) {
-                                        echo "<option value=".$value['id'].">".$value['name']."</option>";    
-                                    }
-                                 ?> 
-                             </select>
-                        </div>
-                       <div class="form_half right">
-                             <select required=""  class="form_half" name="to_palce" style="width:460px; border-radius:10px;">
-                                 <option value="0">Select To</option>
-                                  <?php 
-                                    foreach ($data as $key => $value) {
-                                        echo "<option value=".$value['id'].">".$value['name']."</option>";    
-                                    }
-                                 ?>  
-                             </select>
-                        </div>
+                                    <div class="form_half left">
+                                         <select required=""  class="form_half" name="from_palce" style="width:460px; border-radius:10px;">
+                                             <option value="0">Select From</option>
+                                             <?php
+                                                foreach ($data as $key => $value) {
+                                                    echo "<option value=".$value['id'].">".$value['name']."</option>";    
+                                                }
+                                             ?> 
+                                         </select>
+                                    </div>
+                                   <div class="form_half right">
+                                         <select required=""  class="form_half" name="to_palce" style="width:460px; border-radius:10px;">
+                                             <option value="0">Select To</option>
+                                              <?php 
+                                                foreach ($data as $key => $value) {
+                                                    echo "<option value=".$value['id'].">".$value['name']."</option>";    
+                                                }
+                                             ?>  
+                                         </select>
+                                    </div>
                                     <br>
                                     <br>
                                     <textarea name="message" placeholder="Notes" cols="30" rows="8"></textarea>
