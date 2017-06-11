@@ -484,6 +484,7 @@
                                         $name=$data[$i]["name"];
                                         $phone=$data[$i]["phone"];
                                         $address=$data[$i]["address"];
+                                        $active=($data[$i]["active"] == true) ? 'Deactivate' : 'Activate';
                                         
                                             echo "<tr>";
                                               echo "<td>".$id."</td>";
@@ -491,6 +492,7 @@
                                               echo "<td>".$phone."</td>";
                                               echo "<td>".$address."</td>";
                                               echo "<td> <div class='demotextt'><a href='addEmp.php?id=".$id."'>Edit</a></div></td>";
+                                              echo "<td> <div class='demotextt'><a href='activate.php?active=$active&id=".$id."'>$active</a></div></td>";
                                               echo "</tr>";
                                               }
                                          echo "</table>"; 
@@ -555,12 +557,14 @@
                                         $name=$data[$i]["name"];
                                         $phone=$data[$i]["phone"];
                                         $address=$data[$i]["address"];
+                                        $active=($data[$i]["active"] == true) ? 'Deactivate' : 'Activate';
                                             echo "<tr>";
                                               echo "<td>".$id."</td>";
                                               echo "<td>".$name."</td>";
                                               echo "<td>".$phone."</td>";
                                               echo "<td>".$address."</td>";
                                               echo "<td> <div class='demotextt'><a href='adddriver.php?id=".$id."'>Edit</a></div></td>";
+                                              echo "<td> <div class='demotextt'><a href='activate.php?active=$active&id=".$id."'>$active</a></div></td>";
                                               echo "</tr>";
                                               }
                                          echo "</table>"; 
@@ -620,11 +624,13 @@
                                         $id=$data[$i]["id"];
                                         $type=$data[$i]["type"];
                                         $model=$data[$i]["model"];
+                                        $active=($data[$i]["active"] == true) ? 'Deactivate' : 'Activate';
                                             echo "<tr>";
                                               echo "<td>".$id."</td>";
                                               echo "<td>".$type."</td>";
                                               echo "<td>".$model."</td>";
                                               echo "<td> <div class='demotextt'><a href='addtruck.php?id=".$id."'>Edit</a></div></td>";
+                                              echo "<td> <div class='demotextt'><a href='activate.php?active=$active&type=truck&id=".$id."'>$active</a></div></td>";
                                               echo "</tr>";
                                               }
                                          echo "</table>"; 
