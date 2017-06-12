@@ -10,7 +10,6 @@ require_once 'connection.php';
             $id=$_GET['id'];
             $order= mysqli_query($link,"select * from orders where id='$id'");
             $orders=mysqli_fetch_array($order);
-
             $result= mysqli_query($link,"select * from users where active=1 and user_type = 3 and users.id not in (select driver_id FROM orders where orders.accepted = 1 and orders.from_date not between ".$orders['from_date']." and ".$orders['to_date']."orders.to_date not between ".$orders['from_date']." and ".$orders['to_date'].")");
             if($result){
                 $drivers = [];
@@ -18,7 +17,6 @@ require_once 'connection.php';
                     $drivers[] = $res1;
                 }
             }
-
             $result2= mysqli_query($link,"select * from trucks where active=1 and trucks.id not in (select truck_id FROM orders where orders.accepted = 1 and orders.from_date not between ".$orders['from_date']." and ".$orders['to_date']."orders.to_place not between ".$orders['from_date']." and ".$orders['to_date'].")");
             if($result2){
                 $trucks = [];
@@ -28,7 +26,6 @@ require_once 'connection.php';
             }
      }else if(isset($_SESSION['username']))
         header('location:home.php');
-
 
 $result= mysqli_query($link,"select * from governorates");
 
@@ -47,7 +44,7 @@ while($res1 = mysqli_fetch_assoc($result)){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Contact</title>
+    <title>Order</title>
 
     <!-- owl carousel css -->
     <link rel="stylesheet" href="css/owl.carousel.css"/>

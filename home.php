@@ -307,9 +307,9 @@
                                             else
                                                 $driver_id = 'Not Assigned';
 
-                                            $sql6=("SELECT name FROM trucks where id = ".$data[$i]['truck_id']);
+                                            $sql6=("SELECT type FROM trucks where id = ".$data[$i]['truck_id']);
                                             $sql6Res=mysqli_query($link,$sql6);
-                                            $truck_id = mysqli_fetch_assoc($sql6Res)['name'];
+                                            $truck_id = mysqli_fetch_assoc($sql6Res)['type'];
 
                                         $id=$data[$i]["id"];
                                         $name=$data[$i]["customer_name"];
@@ -335,7 +335,38 @@
                                                 echo "<td> <div class='demotextt'><a href='contact.php?id=".$id."'>Edit</a></div></td>";
                                               echo "</tr>";
                                               }
-                                         echo "</table>"; 
+                                         echo "</table>";
+                                         ?>
+                                        <div class="demotext">
+                                        <button  type=submit class="trust_btn" onclick="showDiv('order')">Search</button>
+                                        <br>
+                                        <br>
+
+                                        <div id='order' style="display: none; margin-right: 300px;">
+                                             <form action="SearchOrder.php" method="post">
+                                                 <div class="centerer">
+                                                        <select name="field" class="dropdown-select">
+                                                          <option value="id">ID</option>
+                                                          <option value="emp">Employee</option>
+                                                          <option value="driver">Driver</option>
+                                                        </select>
+                                                        <select name="format" class="dropdown-select">
+                                                          <option value="Equal">Equal</option>
+                                                          <option value="Begin With">Begin With</option>
+                                                          <option value="End With">End With</option>
+                                                          <option value="Contain">Contain</option>
+                                                        </select><br>
+                                                    
+                                                        <input type="text" name="value" class="dropdown-select1"/>
+                                                    </div>
+                                                    <div class="contact_btn_wrapper">
+                                                        <button  style="margin-left: 300px;" type=submit class="trust_btn qute_sbmt">Search Order</button>
+                                                        <button type=reset class="trust_btn qute_sbmt">Clear Screen</button>
+                                                    </div>
+                                                </form>
+                                        </div> 
+                                    </div>
+                                <?php 
                                     }
                                 ?>
                             </div>
@@ -426,7 +457,39 @@
                                             
                                               echo "</tr>";
                                               }
-                                         echo "</table>"; 
+                                         echo "</table>";
+
+                                         ?>
+                                        <div class="demotext">
+                                        <button  type=submit class="trust_btn" onclick="showDiv('order1')">Search</button>
+                                        <br>
+                                        <br>
+
+                                        <div id='order1' style="display: none; margin-right: 300px;">
+                                             <form action="SearchOrder.php" method="post">
+                                                 <div class="centerer">
+                                                        <select name="field" class="dropdown-select">
+                                                          <option value="id">ID</option>
+                                                          <option value="emp">Employee</option>
+                                                          <option value="driver">Driver</option>
+                                                        </select>
+                                                        <select name="format" class="dropdown-select">
+                                                          <option value="Equal">Equal</option>
+                                                          <option value="Begin With">Begin With</option>
+                                                          <option value="End With">End With</option>
+                                                          <option value="Contain">Contain</option>
+                                                        </select><br>
+                                                    
+                                                        <input type="text" name="value" class="dropdown-select1"/>
+                                                    </div>
+                                                    <div class="contact_btn_wrapper">
+                                                        <button  style="margin-left: 300px;" type=submit class="trust_btn qute_sbmt">Search Order</button>
+                                                        <button type=reset class="trust_btn qute_sbmt">Clear Screen</button>
+                                                    </div>
+                                                </form>
+                                        </div> 
+                                    </div>
+                                <?php 
                                     }
                                 ?>
                             </div>
@@ -942,6 +1005,10 @@
                 $('#driver').show();
             else if (id == 'truck')
                 $('#truck').show();
+            else if (id == 'order')
+                $('#order').show();
+            else if (id == 'order1')
+                $('#order1').show();
        }
     </script>
 </body>
