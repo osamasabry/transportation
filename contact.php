@@ -1,31 +1,28 @@
 <?php
  
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL); 
 require_once 'connection.php';
 
-     session_start();
-     if (isset($_GET['id'])) {
-            $id=$_GET['id'];
-            $order= mysqli_query($link,"select * from orders where id='$id'");
-            $orders=mysqli_fetch_array($order);
-            $result= mysqli_query($link,"select * from users where active=1 and user_type = 3 and users.id not in (select driver_id FROM orders where orders.accepted = 1 and orders.from_date not between ".$orders['from_date']." and ".$orders['to_date']."orders.to_date not between ".$orders['from_date']." and ".$orders['to_date'].")");
-            if($result){
-                $drivers = [];
-                while($res1 = mysqli_fetch_assoc($result)){
-                    $drivers[] = $res1;
-                }
-            }
-            $result2= mysqli_query($link,"select * from trucks where active=1 and trucks.id not in (select truck_id FROM orders where orders.accepted = 1 and orders.from_date not between ".$orders['from_date']." and ".$orders['to_date']."orders.to_place not between ".$orders['from_date']." and ".$orders['to_date'].")");
-            if($result2){
-                $trucks = [];
-                while($res1 = mysqli_fetch_assoc($result2)){
-                    $trucks[] = $res1;
-                }
-            }
-     }else if(isset($_SESSION['username']))
-        header('location:home.php');
+session_start();
+if (isset($_GET['id'])) {
+    $id=$_GET['id'];
+    $order= mysqli_query($link,"select * from orders where id='$id'");
+    $orders=mysqli_fetch_array($order);
+    $result= mysqli_query($link,"select * from users where active=1 and user_type = 3 and users.id not in (select driver_id FROM orders where orders.accepted = 1 and orders.from_date not between ".$orders['from_date']." and ".$orders['to_date']." and orders.to_date not between ".$orders['from_date']." and ".$orders['to_date'].")");
+    if($result){
+        $drivers = [];
+        while($res1 = mysqli_fetch_assoc($result)){
+            $drivers[] = $res1;
+        }
+    }
+    $result2= mysqli_query($link,"select * from trucks where active=1 and trucks.id not in (select truck_id FROM orders where orders.accepted = 1 and orders.from_date not between ".$orders['from_date']." and ".$orders['to_date']." and orders.to_place not between ".$orders['from_date']." and ".$orders['to_date'].")");
+    if($result2){
+        $trucks = [];
+        while($res1 = mysqli_fetch_assoc($result2)){
+            $trucks[] = $res1;
+        }
+    }
+}else if(isset($_SESSION['username']))
+    header('location:home.php');
 
 $result= mysqli_query($link,"select * from governorates");
 

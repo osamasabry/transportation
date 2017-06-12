@@ -239,15 +239,15 @@
                     <div class="containeer" style="">
                         <ul class="nav nav-tabs">
                         <?php if(isset($_SESSION['user_type']) && $_SESSION['user_type'] == 2 ){ ?>
-                          <li><a data-toggle="pill" href="#menu1" style="width: 200px; text-align: center;width: 200px;">All Orders</a></li>
-                          <li><a data-toggle="pill" href="#menu5" style="width: 200px; text-align: center;">My Orders</a></li>
+                          <li><a data-toggle="pill" href="#menu1" style="width: 200px; text-align: center;width: 200px;background-color: #167F92;font-size: 20px;color:white;">All Orders</a></li>
+                          <li><a data-toggle="pill" href="#menu5" style="width: 200px; text-align: center;background-color: #167F92;font-size: 20px;color:white;">My Orders</a></li>
                           <?php }elseif(isset($_SESSION['user_type']) && $_SESSION['user_type'] == 1){?>
-                          <li><a data-toggle="pill" href="#menu1" style="width: 200px; text-align: center;width: 200px;">All Orders</a></li>
-                          <li><a data-toggle="pill" href="#menu2" style="width: 200px; text-align: center;">All Employees</a></li>
-                          <li><a data-toggle="pill" href="#menu3" style="width: 200px; text-align: center;">All Drivers</a></li>
-                          <li><a data-toggle="pill" href="#menu4" style="width: 200px; text-align: center;">All Trucks</a></li>
+                          <li><a data-toggle="pill" href="#menu1" style="width: 200px; text-align: center;width: 200px;background-color: #167F92;font-size: 20px;color:white;">All Orders</a></li>
+                          <li><a data-toggle="pill" href="#menu2" style="width: 200px; text-align: center;background-color: #167F92;font-size: 20px;color:white;">All Employees</a></li>
+                          <li><a data-toggle="pill" href="#menu3" style="width: 200px; text-align: center;background-color: #167F92;font-size: 20px;color:white;">All Drivers</a></li>
+                          <li><a data-toggle="pill" href="#menu4" style="width: 200px; text-align: center;background-color: #167F92;font-size: 20px;color:white;">All Trucks</a></li>
                           <?php }elseif(isset($_SESSION['user_type']) && $_SESSION['user_type'] == 3){?>
-                          <li><a data-toggle="pill" href="#menu6" style="width: 200px; text-align: center;">My Orders</a></li>
+                          <li><a data-toggle="pill" href="#menu6" style="width: 200px; text-align: center;background-color: #167F92;font-size: 20px;color:white;">My Orders</a></li>
                           <?php } ?>
                         </ul>
                         <div class="tab-content">
@@ -309,7 +309,11 @@
 
                                             $sql6=("SELECT type FROM trucks where id = ".$data[$i]['truck_id']);
                                             $sql6Res=mysqli_query($link,$sql6);
-                                            $truck_id = mysqli_fetch_assoc($sql6Res)['type'];
+                                            if($sql6Res)
+                                                $truck_id = mysqli_fetch_assoc($sql6Res)['type'];
+                                            else
+                                                $truck_id = 'Not Assigned';
+
 
                                         $id=$data[$i]["id"];
                                         $name=$data[$i]["customer_name"];
@@ -430,7 +434,10 @@
 
                                             $sql6=("SELECT type FROM trucks where id = ".$data[$i]['truck_id']);
                                             $sql6Res=mysqli_query($link,$sql6);
-                                            $truck_id = mysqli_fetch_assoc($sql6Res)['type'];
+                                            if($sql6Res)
+                                                $truck_id = mysqli_fetch_assoc($sql6Res)['type'];
+                                            else
+                                                $truck_id = 'Not Assigned';
 
                                         $id=$data[$i]["id"];
                                         $name=$data[$i]["customer_name"];
@@ -440,6 +447,7 @@
                                         $place=$from .'/'.$to;
                                         $accepted = ($data[$i]['accepted'] == 0)? 'False' : 'True';   
                                         $notes = $data[$i]['Note'];
+                                        $mailed = $data[$i]['mailed'];
                                             echo "<tr>";
                                               echo "<td>".$id."</td>";
                                               echo "<td>".$name."</td>";
@@ -452,9 +460,11 @@
                                               echo "<td>".$accepted."</td>";
                                               echo "<td>".$truck_id."</td>";
                                               echo "<td>".$notes."</td>";
-                                              if($accepted == 'True')
+                                              if($accepted == 'True' && $mailed == 0)
                                                 echo "<td> <div class='demotextt'><a href='sendMail.php?id=".$id."'>send Mail</a></div></td>";
-                                            
+                                              else if($mailed == 1)
+                                                echo "<td> <div class='demotextt'>Mailed</div></td>";
+                                                
                                               echo "</tr>";
                                               }
                                          echo "</table>";
@@ -765,7 +775,10 @@
 
                                             $sql6=("SELECT type FROM trucks where id = ".$data[$i]['truck_id']);
                                             $sql6Res=mysqli_query($link,$sql6);
-                                            $truck_id = mysqli_fetch_assoc($sql6Res)['type'];
+                                            if($sql6Res)
+                                                $truck_id = mysqli_fetch_assoc($sql6Res)['type'];
+                                            else
+                                                $truck_id = 'Not Assigned';
 
                                             $id=$data[$i]["id"];
                                             $name=$data[$i]["customer_name"];

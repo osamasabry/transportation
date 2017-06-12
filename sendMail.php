@@ -2,9 +2,9 @@
 
  require_once 'connection.php';
  
- 	ini_set('display_errors', 1);
-	ini_set('display_startup_errors', 1);
-	error_reporting(E_ALL);
+ // 	ini_set('display_errors', 1);
+	// ini_set('display_startup_errors', 1);
+	// error_reporting(E_ALL);
  	$id=$_GET['id'];
 	$result= mysqli_query($link,"select email ,customer_name  from orders where id= '$id' ");
 	$res=mysqli_fetch_array($result);
@@ -35,6 +35,9 @@ if (!$mail->send()) {
     echo "Mailer Error: " . $mail->ErrorInfo;
 } else {
     echo "Message sent!";
+	
+	$sql=mysqli_query($link, "UPDATE `orders` SET `mailed`= true where id = ". $_GET['id']);
+	mysqli_close($link);
     header('location:home.php');
 }
 	

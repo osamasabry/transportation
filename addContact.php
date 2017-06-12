@@ -1,8 +1,4 @@
 <?php
-// ini_set('display_errors', 1);
-// ini_set('display_startup_errors', 1);
-// error_reporting(E_ALL);
-
 require_once 'connection.php';
 session_start();
 
@@ -16,8 +12,6 @@ $to_date=$_POST["to_date"];
 $from_palce=$_POST["from_palce"];
 $to_palce=$_POST["to_palce"];
 $message=$_POST["message"];
-
-// var_dump($_SESSION['user_id']);die();
 
 if(isset($_POST['driver']) && isset($_POST['truck'])){
 	$sql=mysqli_query($link, "UPDATE `orders` SET `driver_id`=".$_POST['driver']." , `truck_id`=".$_POST['truck']." , `emp_id`=".$_SESSION['user_id']." where id = ". $_POST['order_id']);
