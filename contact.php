@@ -226,11 +226,20 @@ while($res1 = mysqli_fetch_assoc($result)){
                                                 </ul>
                                             </div>
                                         </li>
+                                         <?php if(isset($_SESSION["username"])):?>    
+                                        <li><a href="home.php">Profile</a></li>
+                                          <li>
+                                            <a href="logout.php">Logout<span class="fa fa-angle-down"></span></a>
+                                         
+                                        </li>
+                                    <?php else: ?>
                                         <li><a href="contact.php">Order</a></li>
                                           <li>
                                             <a href="login.php">Login<span class="fa fa-angle-down"></span></a>
                                          
                                         </li>
+                                    <?php endif;?>
+
                                     </ul>
                                 </div><!-- /.navbar-collapse -->
                             </nav>
